@@ -1,14 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://wjgopieoquteospbtslw.supabase.co/rest/v1/';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_uBdyBOvQOn9bK4KTNOqrkA_1hXufoqo';
 
 export const isSupabaseConfigured = () => {
   return Boolean(
     supabaseUrl &&
     supabaseAnonKey &&
-    !supabaseUrl.includes('your-project-id') &&
-    !supabaseAnonKey.includes('your-anon-public-key')
+    !supabaseUrl.includes('https://wjgopieoquteospbtslw.supabase.co') &&
+    !supabaseAnonKey.includes('sb_publishable_uBdyBOvQOn9bK4KTNOqrkA_1hXufoqo')
   );
 };
 
