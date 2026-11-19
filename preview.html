@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabila Alifia Sundawa — Quick Browser Preview</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            editorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Syne"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+    <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons & React Standalone -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .font-editorial { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .font-display-accent { font-family: 'Syne', sans-serif; }
+    .vertical-writing { writing-mode: vertical-rl; text-orientation: mixed; }
+    @keyframes floatSlow { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+    @keyframes floatReverse { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(10px) rotate(-2deg); } }
+    @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes pulseAura { 0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; } 50% { transform: scale(1.035) rotate(1.5deg); opacity: 0.95; } }
+    @keyframes revealUp { 0% { opacity: 0; transform: translateY(26px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes maskReveal { 0% { opacity: 0; clip-path: inset(12% 0 12% 0); transform: scale(1.03); } 100% { opacity: 1; clip-path: inset(0 0 0 0); transform: scale(1); } }
+    .animate-float-slow { animation: floatSlow 7s ease-in-out infinite; }
+    .animate-float-reverse { animation: floatReverse 8.5s ease-in-out infinite; }
+    .animate-spin-slow { animation: spinSlow 24s linear infinite; }
+    .animate-pulse-aura { animation: pulseAura 6s ease-in-out infinite; }
+    .animate-reveal-up { animation: revealUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .animate-mask-reveal { animation: maskReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#CFE3F2] selection:text-[#2C2520]">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+    // Notice banner for local preview
+    function PreviewBanner() {
+      return (
+        <div className="bg-[#DCEAF4] text-[#2C2520] text-xs py-2 px-4 text-center border-b border-[#CFE3F2] flex items-center justify-center gap-2 font-medium">
+          <span>✨ <strong>Standalone Preview Mode</strong> — Project lengkap Vite + React + Supabase telah siap di direktori <code>scratch/sabila-portfolio</code>.</span>
+        </div>
+      );
+    }
+
+    // Render placeholder informing user where the full modular project is
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <div>
+        <PreviewBanner />
+        <div className="min-h-screen bg-[#FFF9F0] text-[#2C2520] p-8 flex flex-col items-center justify-center text-center">
+          <div className="max-w-xl p-8 rounded-3xl bg-white border border-[#CFE3F2] shadow-xl space-y-4">
+            <div className="w-16 h-16 rounded-full bg-[#DCEAF4] text-[#2C2520] font-serif text-3xl italic flex items-center justify-center mx-auto">S.</div>
+            <h1 className="font-editorial text-4xl font-semibold">Sabila Alifia Sundawa</h1>
+            <p className="font-editorial italic text-lg text-[#5B7C99]">“Exploring Business, Digital Creativity & Beyond.”</p>
+            <p className="text-sm text-[#5A514B] leading-relaxed">
+              Seluruh kode modular telah disusun rapi ke dalam komponen React, Supabase database schema, storage bucket, dan konfigurasi deployment Vercel di:
+            </p>
+            <div className="p-3 bg-[#FAF0D8] rounded-xl text-xs font-mono text-[#2C2520] break-all">
+              /Users/bile/.gemini/antigravity/scratch/sabila-portfolio/
+            </div>
+            <div className="pt-2 text-xs text-[#6E655F]">
+              Jalankan <code className="bg-gray-100 px-2 py-1 rounded">npm install && npm run dev</code> di terminal untuk meluncurkan website secara interaktif.
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  </script>
+</body>
+</html>
