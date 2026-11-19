@@ -24,8 +24,8 @@ export const INITIAL_PORTFOLIO_DATA = {
     {
       id: 'exp-1',
       role: 'E-Commerce Administrator',
-      company: '[Nama Brand / Perusahaan — Dapat Diedit]',
-      period: '[Periode — Dapat Diedit]',
+      company: '[Cylla.store]',
+      period: '[Mei 2026 — September 2026]',
       description: 'Mengelola administrasi toko online, pengelolaan produk, serta aktivitas operasional pada platform e-commerce.',
       mediaUrl: '',
       mediaType: 'image'
@@ -33,8 +33,8 @@ export const INITIAL_PORTFOLIO_DATA = {
     {
       id: 'exp-2',
       role: 'Live Host',
-      company: '[TikTok Live & Shopee Live — Dapat Diedit]',
-      period: '[Periode — Dapat Diedit]',
+      company: '[Cylla.store]',
+      period: '[Mei 2026 — September 2026]',
       description: 'Menjadi host TikTok Live dan Shopee Live, memperkenalkan produk, menjelaskan keunggulan produk, serta berinteraksi dengan calon pembeli.',
       mediaUrl: '',
       mediaType: 'image'
@@ -42,8 +42,8 @@ export const INITIAL_PORTFOLIO_DATA = {
     {
       id: 'exp-3',
       role: 'Content Promotion',
-      company: '[Nama Brand / Project — Dapat Diedit]',
-      period: '[Periode — Dapat Diedit]',
+      company: '[Cylla.store]',
+      period: '[Mei 2026 — September 2026]',
       description: 'Membuat konten promosi untuk kebutuhan pemasaran produk dan media sosial.',
       mediaUrl: '',
       mediaType: 'image'
@@ -51,8 +51,8 @@ export const INITIAL_PORTFOLIO_DATA = {
     {
       id: 'exp-4',
       role: 'Social Media Management',
-      company: '[Nama Akun / Brand — Dapat Diedit]',
-      period: '[Periode — Dapat Diedit]',
+      company: '[SEOMEDIA]',
+      period: '[Juni 2025 - September 2026]',
       description: 'Mengelola konten media sosial, menyusun jadwal posting, memperhatikan waktu publikasi, dan memahami strategi engagement.',
       mediaUrl: '',
       mediaType: 'image'
@@ -60,8 +60,8 @@ export const INITIAL_PORTFOLIO_DATA = {
     {
       id: 'exp-5',
       role: 'Article Writer Intern',
-      company: '[Nama Media / Perusahaan — Dapat Diedit]',
-      period: '[Periode — Dapat Diedit]',
+      company: '[SEOMEDIA]',
+      period: '[Juni 2025 - September 2026]',
       description: 'Memiliki pengalaman dalam penulisan artikel dan penyusunan konten informatif.',
       mediaUrl: '',
       mediaType: 'image'
@@ -69,8 +69,8 @@ export const INITIAL_PORTFOLIO_DATA = {
     {
       id: 'exp-6',
       role: 'Social Media Analyst',
-      company: '[Nama Brand / Studio — Dapat Diedit]',
-      period: '[Periode — Dapat Diedit]',
+      company: '[SEOMEDIA]',
+      period: '[Juni 2025 - September 2026]',
       description: 'Mempelajari performa konten dan interaksi audiens untuk memahami efektivitas media sosial.',
       mediaUrl: '',
       mediaType: 'image'
@@ -78,7 +78,7 @@ export const INITIAL_PORTFOLIO_DATA = {
   ],
   organizations: {
     himaa: {
-      name: 'Himpunan Mahasiswa Manajemen (HIMAA)',
+      name: 'Himpunan Mahasiswa Manajemen (HIMMA)',
       role: 'Divisi Publikasi dan Dokumentasi',
       description: 'Terlibat dalam pembuatan konten publikasi kegiatan organisasi serta dokumentasi acara.'
     },
