@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-display-accent {
+  font-family: 'Syne', sans-serif;
+}
+
+.vertical-writing {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Custom Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #17243A;
+}
+::-webkit-scrollbar-track {
+  background: #FFF9F0;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #293A52;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #CFE3F2;
+  border-radius: 999px;
+}
