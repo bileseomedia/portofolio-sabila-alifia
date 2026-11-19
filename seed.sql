@@ -1,8 +1,8 @@
--- ============================================================================
--- SUPABASE SEED DATA FOR SABILA ALIFIA SUNDAWA PORTFOLIO
--- ============================================================================
+/* ============================================================================
+   SUPABASE SEED DATA FOR SABILA ALIFIA SUNDAWA PORTFOLIO
+   ============================================================================ */
 
--- 1. Insert Profile
+/* 1. Insert or Update Profile */
 INSERT INTO public.portfolio_profile (
     id, name, headline, hero_description, profile_image, profile_caption,
     about_title, about_description, university, major, period, about_image,
@@ -25,9 +25,24 @@ INSERT INTO public.portfolio_profile (
     'https://wa.me/6282249803252',
     'https://www.linkedin.com/in/sabila-alifia-sundawa-982aa7360?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     'https://www.instagram.com/sbilalifia_?evlk=NnFzZ3d3aGp4MzN6'
-) ON CONFLICT (id) DO NOTHING;
+)
+ON CONFLICT (id) DO UPDATE SET
+    name = EXCLUDED.name,
+    headline = EXCLUDED.headline,
+    hero_description = EXCLUDED.hero_description,
+    profile_caption = EXCLUDED.profile_caption,
+    about_title = EXCLUDED.about_title,
+    about_description = EXCLUDED.about_description,
+    university = EXCLUDED.university,
+    major = EXCLUDED.major,
+    period = EXCLUDED.period,
+    contact_headline = EXCLUDED.contact_headline,
+    email = EXCLUDED.email,
+    whatsapp = EXCLUDED.whatsapp,
+    linkedin = EXCLUDED.linkedin,
+    instagram = EXCLUDED.instagram;
 
--- 2. Insert Experiences
+/* 2. Insert Experiences */
 INSERT INTO public.experiences (id, role, company, period, description, media_url, media_type, sort_order) VALUES
 ('exp-1', 'E-Commerce Administrator', '[Nama Brand / Perusahaan — Dapat Diedit]', '[Periode — Dapat Diedit]', 'Mengelola administrasi toko online, pengelolaan produk, serta aktivitas operasional pada platform e-commerce.', '', 'image', 1),
 ('exp-2', 'Live Host', '[TikTok Live & Shopee Live — Dapat Diedit]', '[Periode — Dapat Diedit]', 'Menjadi host TikTok Live dan Shopee Live, memperkenalkan produk, menjelaskan keunggulan produk, serta berinteraksi dengan calon pembeli.', '', 'image', 2),
@@ -37,7 +52,7 @@ INSERT INTO public.experiences (id, role, company, period, description, media_ur
 ('exp-6', 'Social Media Analyst', '[Nama Brand / Studio — Dapat Diedit]', '[Periode — Dapat Diedit]', 'Mempelajari performa konten dan interaksi audiens untuk memahami efektivitas media sosial.', '', 'image', 6)
 ON CONFLICT (id) DO NOTHING;
 
--- 3. Insert Organizations Master Info
+/* 3. Insert Organizations Master Info */
 INSERT INTO public.organizations (
     id, himaa_name, himaa_role, himaa_description,
     leadership_title, leadership_theme, leadership_description
@@ -49,9 +64,16 @@ INSERT INTO public.organizations (
     'Ketua Pelaksana PKKMB Program Studi Manajemen',
     'Embrace Your Inner Light, Celebrate Your New Journey.',
     'Memiliki pengalaman dalam mengoordinasikan kegiatan, bekerja sama dengan tim, mengatur pelaksanaan acara, dan memastikan kegiatan berjalan sesuai rencana.'
-) ON CONFLICT (id) DO NOTHING;
+)
+ON CONFLICT (id) DO UPDATE SET
+    himma_name = EXCLUDED.himaa_name,
+    himma_role = EXCLUDED.himaa_role,
+    himma_description = EXCLUDED.himaa_description,
+    leadership_title = EXCLUDED.leadership_title,
+    leadership_theme = EXCLUDED.leadership_theme,
+    leadership_description = EXCLUDED.leadership_description;
 
--- 4. Insert Selected Works Projects
+/* 4. Insert Selected Works Projects */
 INSERT INTO public.projects (id, title, category, description, role, process, cover_image, sort_order) VALUES
 ('proj-1', 'Operasional & Katalog E-Commerce', 'E-Commerce Management', 'Pengelolaan struktur katalog produk, administrasi pesanan harian, serta optimalisasi tampilan etalase toko digital.', 'E-Commerce Administrator', 'Melakukan pendataan SKU produk, menyusun deskripsi informatif, serta memantau alur pemrosesan pesanan secara berkala.', '', 1),
 ('proj-2', 'Sesi Interaktif TikTok & Shopee Live', 'Live Commerce', 'Sesi siaran langsung interaktif untuk mengenalkan detail produk, menjawab pertanyaan audiens secara real-time, dan membangun kedekatan dengan calon pembeli.', 'Live Commerce Host', 'Menyiapkan poin utama keunggulan produk, mengatur alur presentasi siaran langsung, dan berinteraksi aktif dengan penonton.', '', 2),
@@ -60,16 +82,18 @@ INSERT INTO public.projects (id, title, category, description, role, process, co
 ('proj-5', 'Eksplorasi Visual & AI Creative Editing', 'Creative Editing & AI Animation', 'Eksperimen penyuntingan video pendek dan visual kreatif berbantuan kecerdasan buatan untuk kebutuhan storytelling digital.', 'Creative Editor', 'Konsep visual, penyuntingan transisi video, serta eksplorasi elemen animasi kreatif.', '', 5)
 ON CONFLICT (id) DO NOTHING;
 
--- 5. Insert Vertical Showcase Categories
+/* 5. Insert Vertical Showcase Categories */
 INSERT INTO public.vertical_showcase (id, caption, sort_order) VALUES
 ('ABOUT ME', 'Dokumentasi personal & keseharian sebagai mahasiswa Manajemen di Pradita University.', 1),
 ('EXPERIENCE', 'Rangkaian aktivitas profesional dalam administrasi e-commerce, live commerce, dan pengelolaan konten.', 2),
 ('ORGANIZATION', 'Momen kolaborasi bersama Himpunan Mahasiswa Manajemen (HIMAA) dan kepanitiaan PKKMB.', 3),
 ('SELECTED WORKS', 'Kurasi dokumentasi proyek pemasaran digital, kampanye sosial media, dan penulisan artikel.', 4),
 ('CREATIVE SPACE', 'Ruang eksplorasi video editing, desain konten promosi, dan eksperimen AI animation.', 5)
-ON CONFLICT (id) DO NOTHING;
+ON CONFLICT (id) DO UPDATE SET
+    caption = EXCLUDED.caption,
+    sort_order = EXCLUDED.sort_order;
 
--- 6. Insert Hard & Soft Skills (No coding/programming skills)
+/* 6. Insert Hard & Soft Skills */
 INSERT INTO public.skills (id, type, name, sort_order) VALUES
 ('skill-h-1', 'hard', 'E-Commerce Administration', 1),
 ('skill-h-2', 'hard', 'Social Media Management', 2),
